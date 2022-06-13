@@ -1,0 +1,48 @@
+#qSomos h1
+{
+    color: tomato;
+}
+
+#qSomos img
+{
+    width: 100px;
+    margin: 30px;
+    text-align: center;
+
+}
+
+.qSomos2
+{
+    margin: 30px auto;
+    background: wheat;
+    width: 400px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#qSomos2 img
+{
+    display: block;
+    height: 300px;
+    object-fit: cover;
+    width: 300px;
+    margin: 20 auto;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#qSomos2 h1
+{
+    display: block;
+    text-decoration: none;
+    margin: 20px auto;
+    width: 200px;
+    font-family: 'Arial';
+
+}
+
+.vArca
+{
+    display: block;
+    margin: 20px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoggyShop</title>
+    <!--Links-->
+    {% load static %}
+    <link rel="stylesheet" href="img/LogoDoggyshop.jpg">
+    <link rel="stylesheet" type="text" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="{% static 'css/estilos_productos.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+  {% load crispy_forms_tags %}
+  {% load static %}
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark"><!--Incio_Encabezado-->
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'img/LogoDoggyshop.jpg' %}" width="30" height="30" alt="">
+    </a>
+    <a class="navbar-brand" href="javascript:void(0)">DoggyShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}" style="color:white ;" >Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'galeriaDeAdopcion' %}" style="color:white ;">Galeria de adopcion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'quienesSomos' %}" style="color:white ;">Quienes somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'api' %}" style="color:white ;">Aves</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'productos' %}" style="color:white ;">productos</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <a class="nav-link" href="{% url 'registroUsuario' %}" style="color:white ;">Registrate</a>            
+      </form>
+    </div>
+    </div>
+  </nav><!--Fin_Encabezado-->
+
+  <hr>
+  {% load humanize %}
+  <div class="container-fluid">
+    {% csrf_token %}
+    <h2>Productos</h2>
+    <div class="row">
+      {% for p in productos %}
+      <div class="col-md-3 col-12">
+        <hr>
+        <div class="contenedor_producto">
+          {% if p.imagen %}
+          <img src="{{ p.imagen.url }}}" alt="imagen producto">
+          {% endif %}
+          <div class="detalle">
+            <h2>{{ p.nombre | capfirst }}</h2>
+            <h3>{{ p.marca| capfirst }}</h3>
+            <h5>${{ p.precio | intcomma }}</h5>
+          </div>
+            <a href="{% url 'from_modificar_producto' %}" class="btn btn-primary"> Modificar</a>
+            <a  class="btn btn-danger"> Eliminar</a>
+        </div>
+        <hr>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="{% url 'form_crear_Producto' %}" class="btn btn-primary">Creando Producto</a>
+  </div>
+  <hr>
+<br><br>
+<hr>
+  
+  <!--Footer-->
+  <footer class="bg-dark text-center text-white">
+    <div class="container p-4">
+      <h5>Nuestras redes</h5>
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button">
+          <i class="fab fa-facebook-f">
+            <img src="{% static 'img/facebook.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+          </i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button">
+          <i class="fab fa-twitter">
+            <img src="{% static 'img/twitter.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+          </i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button">
+          <i class="fab fa-instagram">
+            <img src="{% static 'img/instagram.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+          </i></a>
+      </section>
+<section class="">
+  <div class="row">
+    <div class="text-center p-3">
+      <h5 class="text-uppercase">Contacto</h5>
+
+      <ul class="list-unstyled mb-0">
+        <li>
+          <a href="Consultas@doggyshop.cl" class="text-white">Correo de Contacto</a>
+        </li>
+        <li>
+          <a href="https://goo.gl/maps/z9iwdmw16eHijmjW8" class="text-white">Av. Esq. Blanca 501, Maipú</a>
+        </li>
+        <li>
+          <a href="#!" class="text-white">Fono: +56912345678</a>
+        </li>
+        
+      </ul>
+    </div>       
+  </div>
+</section>
+</div>
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+© 2022 Copyright:
+<a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de adopcion</title>
+    <!--Links-->
+    {% load static %}
+    <link rel="stylesheet" href="img/LogoDoggyshop.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="{% static 'css/estilo_ galeriaDeAdopcion.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!--Script-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>     
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Scripts-->
+    <script>
+        function MostrarFecha() 
+        {   
+          document.getElementById('demo').innerHTML = Date();         
+        }
+    </script>
+    
+</head>
+<body>
+    {% load static %}
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark"><!--Incio_Encabezado-->
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'img/LogoDoggyshop.jpg' %}" width="30" height="30" alt="">
+    </a>
+    <a class="navbar-brand" href="javascript:void(0)">DoggyShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}" style="color:white ;">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'galeriaDeAdopcion' %}" style="color:white ;">Galeria de adopcion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'quienesSomos' %}" style="color:white ;">Quienes somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'api' %}" style="color:white ;">Aves</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'productos' %}" style="color:white ;">productos</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <a class="nav-link" href="{% url 'registroUsuario' %}" style="color:white ;">Registrate</a>                  
+      </form>
+    </div>
+    </div>
+  </nav><!--Fin_Encabezado-->
+    <main>
+        <!--Primera Card-->
+        <hr>
+        <div class="container">
+            <h3>Horario de atencion de adopcion 10:00hrs a 18:00hrs</h3>
+            <input type="button" class="btn btn-primary" onclick="MostrarFecha()" value="Mostrar Hora Fecha">
+            <p id="demo"></p>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'img/adopcion01.jpg' %}" class="img-fluid rounded-start" alt="adopcion01">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre</h6>
+                        <h4 class="card-title">Gaspy</h4>
+                        <p class="card-text">Gaspy fue rescatado de un ambiente malo, fue esterilizado, vacunado. Es un perrito muy joven aún, 
+                            tiene un año. Es sumamente cariñoso, alegre a pesar de todo, se vuelve loco de amor por cualquiera Necesita mucho
+                            amor, no queremos que vuelva a sufrir y estar donde no lo quieren. Su tamaño es mediano, tiene energía, ama todo 
+                            tipo personas. Si quieres ser su familia favor llenar formulario online en el link 
+                        </p>
+                        <p class="card-text"><small class="text-muted">https://linktr.ee/fundacion_vyra </small></p>
+                        <a href="https://www.lascondes.cl/mascotas/detalle/6913" class="btn btn-primary" id="adopcion01">Adoptar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <br>
+          <hr>
+          <br>
+        <!--Segunda Card-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'img/adopcion02.jpg' %}" class="img-fluid rounded-start" alt="adopcion02">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre</h6>
+                        <h4 class="card-title">LISA</h4>
+                        <p class="card-text">
+                            Mestizos de Collie (mamá mestiza Collie padre desconocido). Fueron rescatados de un lugar límite de la reina, 
+                            estaban mal y en peligro. Han sido rescatados buscando una segunda oportunidad Son adorables, demasiado tiernitos 
+                            y cariñosos. Su tamaño será mediano entre 15 a 25 kilos. Tienen 2 meses y se les puso su primera dosis de vacuna
+                             octuple. Si deseas adoptar llena formulario de pre adopción online en el
+                        </p>
+                        <p class="card-text"><small class="text-muted">https://linktr.ee/fundacion_vyra </small></p>
+                        <a href="https://www.lascondes.cl/mascotas/detalle/6908" class="btn btn-primary" id="adopcion02">Adoptar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <br>
+          <hr>
+          <br>
+
+        <!--Tercer Card-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'img/adopcion03.jpg' %}" class="img-fluid rounded-start" alt="adopcion03">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre</h6>
+                        <h4 class="card-title">DANTE</h4>
+                        <p class="card-text">
+                            Mestizos de Collie (mamá mestiza Collie padre desconocido). Fueron rescatados de un lugar límite de la reina, estaban mal 
+                            y en peligro. Han sido rescatados buscando una segunda oportunidad Son adorables, demasiado tiernitos y cariñosos. Su tamaño 
+                            será mediano entre 15 a 25 kilos. Tienen 2 meses y se les puso su primera dosis de vacuna octuple. Si deseas adoptar llena 
+                            formulario de pre adopción online en el link 
+                        </p>
+                        <p class="card-text"><small class="text-muted">https://linktr.ee/fundacion_vyra </small></p>
+                        <a href="https://www.lascondes.cl/mascotas/detalle/6907" class="btn btn-primary" id="adopcion03">Adoptar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        <hr>
+        <br>
+
+        <!--Cuarto Card-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'img/adopcion04.jpg' %}" class="img-fluid rounded-start" alt="adopcion04">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre</h6>
+                        <h4 class="card-title">Munír</h4>
+                        <p class="card-text">
+                            Munír es un perrito intenso, cariñoso muy inteligente, aprende rápido, es muy protector, es sociable con otros perros, 
+                            es una gran compañía para no sentirse nunca solo. Dale una oportunidad de compartir tu vida. Es de tamaño mediano 
+                            tiene 2 años está esterilizado con sus vacunas al día y chipeado.
+                        </p>
+                        <a href="https://www.lascondes.cl/mascotas/detalle/6892" class="btn btn-primary" id="adopcion04">Adoptar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        <hr>
+        <br>
+
+        <!--Quinto Card-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'img/adopcion05.jpg' %}" class="img-fluid rounded-start" alt="adopcion05">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre</h6>
+                        <h4 class="card-title">Gatito bebe</h4>
+                        <p class="card-text">
+                            Gatito macho en adopcion Tiene 2 meses Sabe hacer en arenero Buscamos familia que viva en departamento 
+                            con malla Interesados contactar al whatsap de la publicacion o al correo 
+                        </p>
+                        <p class="card-text"><small class="text-muted">barbara.cbs@hotmail.es </small></p>
+                        <a href="https://www.lascondes.cl/mascotas/detalle/6888" class="btn btn-primary" id="adopcion05">Adoptar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!--Quinto Card-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'img/adopcion06.jpg' %}" class="img-fluid rounded-start" alt="adopcion06">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre</h6>
+                        <h4 class="card-title">DAKOTA</h4>
+                        <p class="card-text">
+                            Hola! Perrita encontrada en situación de abandono y requiere de un hogar, tiene 4 meses, 
+                            esta desparasitada y con 1 de sus 3 vacunas
+                        </p>
+                        <a href="https://www.lascondes.cl/mascotas/detalle/6869" class="btn btn-primary" id="adopcion06">Adoptar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!--Footer-->
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4">
+        <h5>Nuestras redes</h5>
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button">
+            <i class="fab fa-facebook-f">
+              <img src="{% static 'img/facebook.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+            </i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button">
+            <i class="fab fa-twitter">
+              <img src="{% static 'img/twitter.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+            </i></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button">
+            <i class="fab fa-instagram">
+              <img src="{% static 'img/instagram.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+            </i></a>
+        </section>
+  <section class="">
+    <div class="row">
+      <div class="text-center p-3">
+        <h5 class="text-uppercase">Contacto</h5>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="Consultas@doggyshop.cl" class="text-white">Correo de Contacto</a>
+          </li>
+          <li>
+            <a href="https://goo.gl/maps/z9iwdmw16eHijmjW8" class="text-white">Av. Esq. Blanca 501, Maipú</a>
+          </li>
+          <li>
+            <a href="#!" class="text-white">Fono: +56912345678</a>
+          </li>
+          
+        </ul>
+      </div>       
+    </div>
+  </section>
+</div>
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  © 2022 Copyright:
+  <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+</div>
+</footer>
+</body>
+</html>
