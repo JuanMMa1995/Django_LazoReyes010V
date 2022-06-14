@@ -45,7 +45,7 @@
           <a class="nav-link" href="{% url 'api' %}" style="color:white ;">Aves</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'productos' %}" style="color:white ;">productos</a>
+          <a class="nav-link" href="{% url 'productos' %}" style="color:white ;">Productos</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -66,15 +66,15 @@
         <hr>
         <div class="contenedor_producto">
           {% if p.imagen %}
-          <img src="{{ p.imagen.url }}}" alt="imagen producto">
+          <img src="{{ p.imagen.url }}" alt="" width="100px" height="100px" style=" margin-left: 60px;" alt="imagen producto">
           {% endif %}
           <div class="detalle">
-            <h2>{{ p.nombre | capfirst }}</h2>
-            <h3>{{ p.marca| capfirst }}</h3>
+            <h3>{{ p.nombre | capfirst }}</h3>
+            <h4>{{ p.marca| capfirst }}</h4>
             <h5>${{ p.precio | intcomma }}</h5>
           </div>
-            <a href="{% url 'from_modificar_producto' %}" class="btn btn-primary"> Modificar</a>
-            <a  class="btn btn-danger"> Eliminar</a>
+            <a href="" class="btn btn-success"> Modificar</a>
+            <a class="btn btn-success"> Eliminar</a>
         </div>
         <hr>
       </div>

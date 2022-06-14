@@ -15,3 +15,20 @@ class Producto(models.Model):
     imagen = models.ImageField(upload_to="producto", null=True)
     def __str__(self):
         return self.nombre
+
+opciones_consulta = [
+    [0, "consulta"],
+    [1, "reclamo"],
+    [2, "sugerencia"],
+    [3, "felicitaciones"]
+]
+
+class contacto(models.Model):
+    nombreP = models.CharField(max_length=50)
+    correoP = models.EmailField()
+    tipo_Consulta = models.IntegerField()
+    mensaje = models.TextField()
+    aviso = models.BooleanField()
+
+    def __str__(self):
+        return self.nombre

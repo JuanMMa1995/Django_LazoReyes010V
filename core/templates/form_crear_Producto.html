@@ -98,33 +98,35 @@
         <form method="POST" action="#" id="formulario">
             {% csrf_token %}
             
-            <div class="form-group">
+            <div class="container-fluid">
+              <div class="form-group" required="obligatorio">
                 {{ producto_form.nombre.label}}
                 {{ producto_form.nombre}}
             </div>
 
-            <div class="form-group">
+            <div class="form-group" required="obligatorio">
                 {{ producto_form.precio.label}}
                 {{ producto_form.precio}}
             </div>
 
-            <div class="form-group">
+            <div class="form-group" required="obligatorio">
                 {{ producto_form.marca.label}}
                 {{ producto_form.marca}}
             </div>
 
-            <div class="form-group">
+            <div class="form-group" required="obligatorio" >
                 {{ producto_form.fec_fabricacion.label}}
                 {{ producto_form.fec_fabricacion}}
             </div>
 
-            <div class="form-group">
+            <div class="form-group" required="obligatorio" >
                 {{ producto_form.imagen.label}}
                 {{ producto_form.imagen}}
             </div>
+            </div>
 
         
-            <input type="submit" class="btn btn-primary" value="Enviar">
+            <input type="submit" class="btn btn-danger" value="Enviar">
             <input type="reset" class="btn btn-danger" value="Limpiar">
         </form>
         

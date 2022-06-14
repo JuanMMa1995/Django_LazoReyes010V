@@ -30,91 +30,97 @@
 {% load static %}
 <body background="{% static 'img/2836.png' %}">
   {% load static %}
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark"><!--Incio_Encabezado-->
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="{% static 'img/LogoDoggyshop.jpg' %}" width="30" height="30" alt="">
-    </a>
-    <a class="navbar-brand" href="javascript:void(0)">DoggyShop</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'index' %}" style="color:white ;">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'galeriaDeAdopcion' %}" style="color:white ;">Galeria de adopcion</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'quienesSomos' %}" style="color:white ;">Quienes somos</a>
-        </li>                    
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'registroUsuario' %}" style="color:white ;">Registrate</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'api' %}" style="color:white ;">Aves</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'productos' %}" style="color:white ;">Productos</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <a class="nav-link" href="{% url 'registroUsuario' %}" style="color:white ;">Registrate</a>                   
-      </form>
-    </div>
-    </div>
-  </nav><!--Fin_Encabezado-->
+  <div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark"><!--Incio_Encabezado-->
+      <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'img/LogoDoggyshop.jpg' %}" width="30" height="30" alt="">
+      </a>
+      <a class="navbar-brand" href="javascript:void(0)">DoggyShop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}" style="color:white ;">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'galeriaDeAdopcion' %}" style="color:white ;">Galeria de adopcion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'quienesSomos' %}" style="color:white ;">Quienes somos</a>
+          </li>                    
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'registroUsuario' %}" style="color:white ;">Registrate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'api' %}" style="color:white ;">Aves</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'productos' %}" style="color:white ;">Productos</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <a class="nav-link" href="{% url 'registroUsuario' %}" style="color:white ;">Registrate</a>                   
+        </form>
+      </div>
+      </div>
+    </nav>
+  </div>
+  <!--Fin_Encabezado-->
    
        
-    <div class="contact_form">
-      <div class="formulario">      
-        <h1>Registrate</h1>
-          
-      <form action="submeter-formulario.php" method="post">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="contact_form">
+        <div class="formulario">      
+          <h1>Registrate</h1>
+            
+        <form action="submeter-formulario.php" method="post">
+  
+        <p>
+          <div class="form-group">
+            <label for="nombre" class="colocar_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nom" id="nom" required="obligatorio" placeholder="Escribe tu nombre" onchange="CambiarMayusculas()">
+          </div>
+        </p>
+              
+        <p>
+          <div class="form-group">
+            <label for="email" class="colocar_email">Email</label>
+            <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="tumail@example.com">
+          </div>
+        </p>
+            
+        <p>
+          <div class="form-group">
+            <label for="telefone" class="colocar_telefono">Teléfono</label>
+            <input type="tel" name="introducir_telefono" id="telefono" placeholder="+56 9 1111 2222">
+          </div>
+        </p>
+              
+        <p>
+          <div>
+            <label for="asunto" class="colocar_asunto">Contraseña</label>
+            <input 
+            type="password"
+            class="form-control"
+            id="pass"
+            name="introducir_pass"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title="Debe contener como mínimo 8 caracteres, una mayuscula, una minuscula y un numero"
+            placeholder="Escribe un contraseña"
+            required="obligatorio">
+          </div>
+        </p>                   
+              
+        <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+        <button type="reset"  name="limpiar_formulario" id="limpiar"><p>Limpiar</p></button>
+        </form>
+        </div>  
+    </div>
+    </div>
 
-      <p>
-        <div class="form-group">
-          <label for="nombre" class="colocar_nombre">Nombre</label>
-          <input type="text" class="form-control" name="nom" id="nom" required="obligatorio" placeholder="Escribe tu nombre" onchange="CambiarMayusculas()">
-        </div>
-      </p>
-            
-      <p>
-        <div class="form-group">
-          <label for="email" class="colocar_email">Email</label>
-          <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="tumail@example.com">
-        </div>
-      </p>
-          
-      <p>
-        <div class="form-group">
-          <label for="telefone" class="colocar_telefono">Teléfono</label>
-          <input type="tel" name="introducir_telefono" id="telefono" placeholder="+56 9 1111 2222">
-        </div>
-      </p>
-            
-      <p>
-        <div>
-          <label for="asunto" class="colocar_asunto">Contraseña</label>
-          <input 
-          type="password"
-          class="form-control"
-          id="pass"
-          name="introducir_pass"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-          title="Debe contener como mínimo 8 caracteres, una mayuscula, una minuscula y un numero"
-          placeholder="Escribe un contraseña"
-          required="obligatorio">
-        </div>
-      </p>                   
-            
-      <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
-      <button type="reset"  name="limpiar_formulario" id="limpiar"><p>Limpiar</p></button>
-      </form>
-      </div>  
-  </div>
     <!--Footer-->
     <footer class="bg-dark text-center text-white">
       <div class="container p-4">

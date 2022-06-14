@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import index, galeriaDeAdopcion, api, quienesSomos, productos, registroUsuario, form_crear_Producto, from_modificar_producto
+from .views import index, galeriaDeAdopcion, api, quienesSomos, productos, registroUsuario, form_crear_Producto, from_modificar_producto, contacto
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -12,7 +12,8 @@ urlpatterns = [
     path('productos/', productos, name="productos"),
     path('registroUsuario/', registroUsuario, name="registroUsuario"),
     path('form_crear_Producto/', form_crear_Producto, name="form_crear_Producto"),
-    path('from_modificar_producto/', from_modificar_producto, name="from_modificar_producto"),
+    path('from_modificar_producto/<id>', from_modificar_producto, name="from_modificar_producto"),
+    path('contacto/', contacto, name="contacto"),
 ]
 
 if settings.DEBUG:
